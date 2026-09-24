@@ -717,3 +717,53 @@ main {
     font-weight: 700;
     cursor: pointer;
 }
+/* LOGIN */
+
+.pantalla-login {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 360px;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.login-card h2 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.boton-google {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #f97316;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-google:hover {
+    opacity: 0.9;
+}
+
+.mensaje-login {
+    margin-top: 15px;
+    font-size: 14px;
+}
