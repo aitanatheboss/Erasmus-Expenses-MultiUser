@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Erasmus Expenses</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- CABECERA -->
+
+        <header>
+
+            <h1>🇵🇱 Erasmus Expenses</h1>
+
+            <p>Control de gastos</p>
+
+        </header>
+
+
+        <main>
+
+
+            <!-- ============================= -->
+            <!-- INICIO -->
+            <!-- ============================= -->
+
+            <section id="pantallaInicio">
+
+
+                <!-- SELECTOR DE MES -->
+
+               <div class="selector-periodo-inicio">
+
+    <label>
+        RESUMEN
+    </label>
+
+    <div class="selector-tipo-periodo">
+
+        <button
+            type="button"
+            class="boton-periodo activo"
+            data-periodo="mes">
+
+            MES
+
+        </button>
+
+        <button
+            type="button"
+            class="boton-periodo"
+            data-periodo="semana">
+
+            SEMANA
+
+        </button>
+
+        <button
+            type="button"
+            class="boton-periodo"
+            data-periodo="dia">
+
+            DÍA
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="selectorDetallePeriodo"
+        class="selector-detalle-periodo">
+
+        <select id="mesInicio">
+
+            <option value="">
+                Cargando...
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+                <!-- RESUMEN -->
+
+                <section class="resumen">
+
+                    <p class="titulo">
+                        GASTADO ESTE MES
+                    </p>
+
+                    <h2 id="total">
+                        0,00 €
+                    </h2>
+
+
+                    <div class="presupuesto-info">
+
+
+                        <div class="dato-presupuesto">
+
+                            <span>
+                                Presupuesto
+                            </span>
+
+                            <strong id="presupuesto">
+                                0,00 €
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato-presupuesto disponible">
+
+                            <span>
+                                Disponible
+                            </span>
+
+                            <strong id="disponible">
+                                0,00 €
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- BARRA DE PRESUPUESTO -->
+
+                    <div class="barra-contenedor">
+
+                        <div class="barra-fondo">
+
+                            <div
+                                id="barraPresupuesto"
+                                class="barra-progreso">
+                            </div>
+
+                        </div>
+
+
+                        <div class="barra-texto">
+
+                            <span>
+                                Presupuesto utilizado
+                            </span>
+
+                            <strong id="porcentajePresupuesto">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <!-- GASTO MEDIO DIARIO -->
+
+                        <div class="estadistica-diaria">
+
+                            <span>
+                                Gasto medio diario
+                            </span>
+
+                            <strong id="gastoMedioDiario">
+                                0,00 € / día
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- CATEGORÍAS -->
+
+                <section class="categorias">
+
+
+                    <div class="categoria">
+
+                        <span>
+                            🍔 Comida
+                        </span>
+
+                        <strong id="totalComida">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            🚆 Transporte
+                        </span>
+
+                        <strong id="totalTransporte">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            🏠 Residencia
+                        </span>
+
+                        <strong id="totalResidencia">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            🛍️ Compras
+                        </span>
+
+                        <strong id="totalCompras">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            🎉 Ocio
+                        </span>
+
+                        <strong id="totalOcio">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            ✈️ Viajes
+                        </span>
+
+                        <strong id="totalViajes">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            🎓 Universidad
+                        </span>
+
+                        <strong id="totalUniversidad">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="categoria">
+
+                        <span>
+                            📦 Otros
+                        </span>
+
+                        <strong id="totalOtros">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- ============================= -->
+            <!-- AÑADIR GASTO -->
+            <!-- ============================= -->
+
+            <section
+                id="pantallaAñadir"
+                class="pantalla">
+
+
+                <section class="formulario">
+
+
+                    <h2>
+                        AÑADIR GASTO
+                    </h2>
+
+
+                    <label>
+                        Importe
+                    </label>
+
+                    <input
+                        type="number"
+                        id="importe"
+                        placeholder="0,00"
+                        step="0.01"
+                    >
+
+
+                    <label>
+                        Concepto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="concepto"
+                        placeholder="Ej. Cena"
+                    >
+
+
+                    <label>
+                        Categoría
+                    </label>
+
+                    <select id="categoria">
+
+                        <option value="Comida">
+                            🍔 Comida
+                        </option>
+
+                        <option value="Transporte">
+                            🚆 Transporte
+                        </option>
+
+                        <option value="Residencia">
+                            🏠 Residencia
+                        </option>
+
+                        <option value="Compras">
+                            🛍️ Compras
+                        </option>
+
+                        <option value="Ocio">
+                            🎉 Ocio
+                        </option>
+
+                        <option value="Viajes">
+                            ✈️ Viajes
+                        </option>
+
+                        <option value="Universidad">
+                            🎓 Universidad
+                        </option>
+
+                        <option value="Otros">
+                            📦 Otros
+                        </option>
+
+                    </select>
+
+
+                    <label>
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                    >
+
+
+                    <button id="guardarGasto">
+                        GUARDAR GASTO
+                    </button>
+
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- ============================= -->
+            <!-- HISTORIAL -->
+            <!-- ============================= -->
+
+            <section
+                id="pantallaHistorial"
+                class="pantalla">
+
+
+                <section class="lista-gastos">
+
+
+                    <h3>
+                        HISTORIAL DE GASTOS
+                    </h3>
+
+
+                    <!-- FILTROS -->
+
+                    <div class="filtros">
+
+
+                        <div>
+
+                            <label for="filtroMes">
+                                Mes
+                            </label>
+
+                            <select id="filtroMes">
+
+                                <option value="todos">
+                                    Todos los meses
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="filtroCategoria">
+                                Categoría
+                            </label>
+
+                            <select id="filtroCategoria">
+
+                                <option value="todas">
+                                    Todas
+                                </option>
+
+                                <option value="COMIDA">
+                                    🍔 Comida
+                                </option>
+
+                                <option value="TRANSPORTE">
+                                    🚆 Transporte
+                                </option>
+
+                                <option value="RESIDENCIA">
+                                    🏠 Residencia
+                                </option>
+
+                                <option value="COMPRAS">
+                                    🛍️ Compras
+                                </option>
+
+                                <option value="OCIO">
+                                    🎉 Ocio
+                                </option>
+
+                                <option value="VIAJES">
+                                    ✈️ Viajes
+                                </option>
+
+                                <option value="UNIVERSIDAD">
+                                    🎓 Universidad
+                                </option>
+
+                                <option value="OTROS">
+                                    📦 Otros
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- RESUMEN DEL MES -->
+
+                    <div
+                        id="resumenMes"
+                        class="resumen-mes">
+
+
+                        <div>
+
+                            <span>
+                                Presupuesto
+                            </span>
+
+                            <strong id="presupuestoHistorial">
+                                0,00 €
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Gastado
+                            </span>
+
+                            <strong id="gastadoHistorial">
+                                0,00 €
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Disponible
+                            </span>
+
+                            <strong id="disponibleHistorial">
+                                0,00 €
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- AVISO OFFLINE -->
+
+                    <div
+                        id="avisoOffline"
+                        class="aviso-offline"
+                        style="display: none;">
+
+                        📡 Mostrando los últimos datos guardados
+
+                    </div>
+
+
+                    <!-- LISTA DE GASTOS -->
+
+                    <div id="listaGastos"></div>
+
+
+                    <!-- FORMULARIO DE EDICIÓN -->
+
+                    <div
+                        id="formularioEdicion"
+                        class="formulario-edicion">
+
+
+                        <h3>
+                            EDITAR GASTO
+                        </h3>
+
+
+                        <label>
+                            Importe
+                        </label>
+
+                        <input
+                            type="number"
+                            id="editarImporte"
+                            step="0.01"
+                        >
+
+
+                        <label>
+                            Concepto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editarConcepto"
+                        >
+
+
+                        <label>
+                            Categoría
+                        </label>
+
+                        <select id="editarCategoria">
+
+                            <option value="Comida">
+                                🍔 Comida
+                            </option>
+
+                            <option value="Transporte">
+                                🚆 Transporte
+                            </option>
+
+                            <option value="Residencia">
+                                🏠 Residencia
+                            </option>
+
+                            <option value="Compras">
+                                🛍️ Compras
+                            </option>
+
+                            <option value="Ocio">
+                                🎉 Ocio
+                            </option>
+
+                            <option value="Viajes">
+                                ✈️ Viajes
+                            </option>
+
+                            <option value="Universidad">
+                                🎓 Universidad
+                            </option>
+
+                            <option value="Otros">
+                                📦 Otros
+                            </option>
+
+                        </select>
+
+
+                        <label>
+                            Fecha
+                        </label>
+
+                        <input
+                            type="date"
+                            id="editarFecha"
+                        >
+
+
+                        <div class="botones-edicion">
+
+
+                            <button id="guardarEdicion">
+                                GUARDAR CAMBIOS
+                            </button>
+
+
+                            <button id="cancelarEdicion">
+                                CANCELAR
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- TOTAL -->
+
+                    <div class="total-historial">
+
+                        <span>
+                            TOTAL
+                        </span>
+
+                        <strong id="totalFiltrado">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                </section>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- ============================= -->
+        <!-- NAVEGACIÓN -->
+        <!-- ============================= -->
+
+        <nav class="navegacion">
+
+
+            <button id="navInicio">
+
+                <span class="icono">
+                    🏠
+                </span>
+
+                <span>
+                    Inicio
+                </span>
+
+            </button>
+
+
+            <button id="navAñadir">
+
+                <span class="icono">
+                    ＋
+                </span>
+
+                <span>
+                    Añadir
+                </span>
+
+            </button>
+
+
+            <button id="navHistorial">
+
+                <span class="icono">
+                    📋
+                </span>
+
+                <span>
+                    Historial
+                </span>
+
+            </button>
+
+
+        </nav>
+
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

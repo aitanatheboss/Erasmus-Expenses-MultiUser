@@ -1,0 +1,719 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #1f2937;
+}
+
+
+.app {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #ffffff;
+    padding-bottom: 80px;
+}
+
+
+/* ============================= */
+/* CABECERA */
+/* ============================= */
+
+header {
+    background: #f97316;
+    color: white;
+    padding: 30px 24px;
+    border-radius: 0 0 25px 25px;
+}
+
+
+header h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+
+header p {
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* CONTENIDO */
+/* ============================= */
+
+main {
+    padding: 24px;
+}
+
+
+/* ============================= */
+/* RESUMEN */
+/* ============================= */
+
+.resumen {
+    background: #eef2ff;
+    border: 1px solid #dbe3f5;
+    border-radius: 24px;
+    padding: 26px 22px;
+    text-align: center;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+
+.resumen .titulo {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+
+.resumen h2 {
+    font-size: 40px;
+    color: #172554;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 4px 0;
+}
+
+/* ============================= */
+/* PRESUPUESTO */
+/* ============================= */
+
+.presupuesto-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #dbe3f5;
+}
+
+
+.dato-presupuesto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+
+.dato-presupuesto span {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+
+.dato-presupuesto strong {
+    font-size: 18px;
+    color: #172554;
+    font-weight: 700;
+}
+
+
+.dato-presupuesto.disponible {
+    align-items: flex-end;
+}
+
+
+/* ============================= */
+/* BARRA */
+/* ============================= */
+
+.barra-contenedor {
+    margin-top: 20px;
+}
+
+
+.barra-fondo {
+    width: 100%;
+    height: 12px;
+    background: #dbe3f5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.barra-progreso {
+    width: 0%;
+    height: 100%;
+    background: #f97316;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+
+.barra-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+
+.barra-texto span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+
+.barra-texto strong {
+    font-size: 12px;
+    color: #f97316;
+}
+
+
+/* ============================= */
+/* CATEGORÍAS */
+/* ============================= */
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.categoria {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+.categoria strong {
+    color: #172554;
+}
+
+
+/* ============================= */
+/* FORMULARIO */
+/* ============================= */
+
+.formulario {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 22px;
+    margin-top: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.formulario h2 {
+    color: #f97316;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+
+.formulario label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.formulario input,
+.formulario select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #f8fafc;
+}
+
+
+.formulario input:focus,
+.formulario select:focus {
+    outline: none;
+    border-color: #f97316;
+}
+
+
+#guardarGasto {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    background: #f97316;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#guardarGasto:hover {
+    opacity: 0.9;
+}
+
+
+/* ============================= */
+/* HISTORIAL */
+/* ============================= */
+
+.lista-gastos {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.lista-gastos h3 {
+    font-size: 15px;
+    margin-bottom: 16px;
+    color: #172554;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+
+
+/* FILTROS */
+
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+
+.filtros > div {
+    flex: 1;
+}
+
+
+.filtros label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+
+.filtros select {
+    width: 100%;
+    padding: 11px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 13px;
+}
+
+
+/* GASTO */
+
+.gasto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+.gasto div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.gasto strong {
+    font-size: 15px;
+    color: #172554;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.gasto small {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+.gasto > strong {
+    color: #172554;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+.gasto-derecha {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.boton-editar,
+.boton-borrar {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background: #f8fafc;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.boton-editar:hover,
+.boton-borrar:hover {
+    background: #eef2ff;
+    transform: scale(1.05);
+}
+
+
+/* TOTAL */
+
+.total-historial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: #fff7ed;
+    border-radius: 16px;
+}
+
+
+.total-historial span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+
+
+.total-historial strong {
+    font-size: 20px;
+    color: #f97316;
+}
+
+
+/* SIN GASTOS */
+
+.sin-gastos {
+    text-align: center;
+    padding: 35px 15px;
+    color: #64748b;
+}
+
+
+.sin-gastos span {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+.sin-gastos p {
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* PANTALLAS */
+/* ============================= */
+
+.pantalla {
+    display: none;
+}
+
+
+#pantallaInicio {
+    display: block;
+}
+
+
+/* ============================= */
+/* NAVEGACIÓN */
+/* ============================= */
+
+.navegacion {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    height: 70px;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+
+.navegacion button {
+    border: none;
+    background: none;
+    color: #64748b;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 70px;
+}
+
+
+.navegacion button span:last-child {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+.navegacion button .icono {
+    font-size: 22px;
+}
+
+
+.navegacion button:hover {
+    color: #f97316;
+}
+
+
+.navegacion button.activo {
+    color: #f97316;
+}
+
+/* ==========================================
+   RESUMEN DEL MES EN HISTORIAL
+   ========================================== */
+
+.resumen-mes {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 17px 14px;
+    margin-bottom: 18px;
+    background: #eef2ff;
+    border: 1px solid #dbe3f5;
+    border-radius: 18px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.resumen-mes > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resumen-mes span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.resumen-mes strong {
+    font-size: 14px;
+    color: #172554;
+}
+
+/* ==========================================
+   FORMULARIO DE EDICIÓN
+   ========================================== */
+
+.formulario-edicion {
+    display: none;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-edicion h3 {
+    color: #f97316;
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+
+.formulario-edicion label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.formulario-edicion input,
+.formulario-edicion select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #f8fafc;
+}
+
+.botones-edicion {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botones-edicion button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#guardarEdicion {
+    background: #f97316;
+    color: white;
+}
+
+#cancelarEdicion {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.aviso-offline {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #9a3412;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.selector-mes-inicio {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.selector-mes-inicio label {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 6px;
+}
+
+.selector-mes-inicio select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #172554;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ==========================================
+   SELECTOR DE PERIODO EN INICIO
+   ========================================== */
+
+.selector-periodo-inicio {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.selector-periodo-inicio > label {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    margin-bottom: 8px;
+}
+
+.selector-tipo-periodo {
+    display: flex;
+    gap: 6px;
+}
+
+.boton-periodo {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 6px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.boton-periodo:hover {
+    background: #eef2ff;
+}
+
+.boton-periodo.activo {
+    background: #172554;
+    color: #ffffff;
+}
+
+.selector-detalle-periodo {
+    margin-top: 10px;
+}
+
+.selector-detalle-periodo select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #172554;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
