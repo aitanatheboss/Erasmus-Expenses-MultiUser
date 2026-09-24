@@ -12,6 +12,37 @@
 
 <body>
 
+    <!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEovfb8xnrsow0Zomr2B-EgvmXD900NgU",
+    authDomain: "erasmus-expenses-multiuser.firebaseapp.com",
+    projectId: "erasmus-expenses-multiuser",
+    storageBucket: "erasmus-expenses-multiuser.firebasestorage.app",
+    messagingSenderId: "386378789399",
+    appId: "1:386378789399:web:4591dd3243fd5387086252"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  window.firebaseAuth = auth;
+  window.firebaseProvider = provider;
+  window.signInWithPopup = signInWithPopup;
+  window.signOut = signOut;
+  window.onAuthStateChanged = onAuthStateChanged;
+</script>
+    
     <div class="app">
 
         <!-- CABECERA -->
